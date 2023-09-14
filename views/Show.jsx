@@ -28,7 +28,8 @@ const Pokemon = require('../models/pokemon');
                  })
            } 
                  </ul>
-                 <img src={img} alt="" />  
+                 <img src='https://upload.wikimedia.org/wikipedia/en/1/1f/Pok%C3%A9mon_Charizard_art.png' alt=""/>  
+                 <a href={'/pokemon'}>back</a>
             </div>
             )}}
 
