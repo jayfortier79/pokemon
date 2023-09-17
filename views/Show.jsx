@@ -4,6 +4,7 @@ const Pokemon = require('../models/pokemon');
     
     class Show extends React.Component {
         render () {
+            const { name, evolved, img} = this.props.Pman
         const myStyle = {
             color: '#ffffff',
             backgroundColor: '#000000',
@@ -12,26 +13,20 @@ const Pokemon = require('../models/pokemon');
             <div style={myStyle}>
             <h1> 'Gotta Catch 'Em All!'</h1>
             <h2>                       </h2>
-            <ul>
-           {
-            Pokemon.map((Pman, i) => {
-                return (
-                  <li key={i}>
-                    The{' '}
-                    <a href={`/pokemon/${Pman._id}`}>
-                      {Pman.name.toUpperCase()}
-                    </a>
-                </li> 
-                
-                )
-                
-                 })
-           } 
-                 </ul>
-                 <img src='https://upload.wikimedia.org/wikipedia/en/1/1f/Pok%C3%A9mon_Charizard_art.png' alt=""/>  
-                 <a href={'/pokemon'}>back</a>
-            </div>
-            )}}
+            <div>
+        The {name} is {
+          evolved ? 
+            "Is evolved!"
+          :
+            "Is not evolved"
+        }
+        </div>
+       
+        <img src={img} alt="" />
+      </div>
+    );
+  }
+}
 
     module.exports = Show
     
